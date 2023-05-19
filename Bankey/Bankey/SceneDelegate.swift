@@ -7,6 +7,8 @@
 
 import UIKit
 
+let appColor: UIColor = .systemTeal
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
   var window: UIWindow?
@@ -14,6 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   let loginViewController = LoginViewController()
   let onboardingContainerViewController = OnboardingContainerViewController()
   let dummyViewController = DummyViewController()
+  let mainViewController = MainViewController()
 
   func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 
@@ -22,13 +25,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     window = UIWindow(frame: windowScene.coordinateSpace.bounds)
     window?.makeKeyAndVisible()
     window?.windowScene = windowScene
-//    window?.rootViewController = LoginViewController()
+    window?.rootViewController = AccountSummaryViewController()
 //    window?.rootViewController = OnboardingContainerViewController()
+//    window?.rootViewController = mainViewController
+//    window?.rootViewController = AccountSummaryViewController()
+
     loginViewController.delegate = self
     onboardingContainerViewController.delegate = self
     dummyViewController.logoutDelegate = self
 
-    window?.rootViewController = loginViewController
 
   }
 
