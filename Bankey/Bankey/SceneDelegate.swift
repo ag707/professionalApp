@@ -26,13 +26,35 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     window?.makeKeyAndVisible()
     window?.windowScene = windowScene
     window?.rootViewController = AccountSummaryViewController()
-//    window?.rootViewController = OnboardingContainerViewController()
-//    window?.rootViewController = mainViewController
-//    window?.rootViewController = AccountSummaryViewController()
+    //    window?.rootViewController = OnboardingContainerViewController()
+    //    window?.rootViewController = mainViewController
+    //    window?.rootViewController = AccountSummaryViewController()
 
     loginViewController.delegate = self
     onboardingContainerViewController.delegate = self
     dummyViewController.logoutDelegate = self
+    displayLogin()
+
+  }
+
+    private func displayLogin() {
+            setRootViewController(loginViewController)
+        }
+
+        private func displayNextScreen() {
+            if LocalState.hasOnboarded {
+                prepMainView()
+                setRootViewController(mainViewController)
+            } else {
+                setRootViewController(onboardingContainerViewController)
+            }
+        }
+
+        private func prepMainView() {
+            mainViewController.setStatusBar()
+            UINavigationBar.appearance().isTranslucent = false
+            UINavigationBar.appearance().backgroundColor = appColor
+        }
 
 
   }
@@ -66,34 +88,36 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   }
 
 
+extension SceneDelegate {
+    func setRootViewController(_ vc: UIViewController, animated: Bool = true) {
+        guard animated, let window = self.window else {
+            self.window?.rootViewController = vc
+            self.window?.makeKeyAndVisible()
+            return
+        }
+
+        window.rootViewController = vc
+        window.makeKeyAndVisible()
+        UIView.transition(with: window,
+                          duration: 0.3,
+                          options: .transitionCrossDissolve,
+                          animations: nil,
+                          completion: nil)
+    }
 }
 
 extension SceneDelegate: LoginViewControllerDelegate {
-  func didLogin() {
-    if LocalState.hasOnboarded {
-      setRootViewController(dummyViewController)
-    } else {
-      setRootViewController(onboardingContainerViewController)
+    func didLogin() {
+        displayNextScreen()
     }
-  }
 }
 
-extension SceneDelegate {
-  func setRootViewController(_ vc: UIViewController, animated: Bool = true) {
-      guard animated, let window = self.window else {
-          self.window?.rootViewController = vc
-          self.window?.makeKeyAndVisible()
-          return
-      }
-
-      window.rootViewController = vc
-      window.makeKeyAndVisible()
-      UIView.transition(with: window,
-                        duration: 0.3,
-                        options: .transitionCrossDissolve,
-                        animations: nil,
-                        completion: nil)
-  }
+extension SceneDelegate: OnboardingContainerViewControllerDelegate {
+    func didFinishOnboarding() {
+        LocalState.hasOnboarded = true
+        prepMainView()
+        setRootViewController(mainViewController)
+    }
 }
 
 extension SceneDelegate: LogoutDelegate {
@@ -101,11 +125,3 @@ extension SceneDelegate: LogoutDelegate {
         setRootViewController(loginViewController)
     }
 }
-
-extension SceneDelegate: OnboardingContainerViewControllerDelegate {
-    func didFinishOnboarding() {
-        LocalState.hasOnboarded = true
-        setRootViewController(dummyViewController)
-    }
-}
-
