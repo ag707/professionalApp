@@ -25,9 +25,9 @@ class OnboardingContainerViewController: UIViewController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         self.pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
 
-      let page1 = OnboardingViewController(heroImageName: "delorean", titleText: "Bankey is faster, easier to use, and has a brand new look and feel that will make you feel like you are back in the 80s.")
-      let page2 = OnboardingViewController(heroImageName: "world", titleText: "Move your money around the world quickly and securely.")
-      let page3 = OnboardingViewController(heroImageName: "thumbs", titleText: "Learn more at www.bankey.com.")
+      let page1 = OnboardingViewController(heroImageName: "CellImage", titleText: "NewsToday is a great great app to watch news all over the world.")
+      let page2 = OnboardingViewController(heroImageName: "image2", titleText: "Check anything you want.")
+      let page3 = OnboardingViewController(heroImageName: "image3", titleText: "Enjoy to use it.")
 
         pages.append(page1)
         pages.append(page2)
@@ -54,7 +54,7 @@ class OnboardingContainerViewController: UIViewController {
 
   private func setup() {
 
-    view.backgroundColor = .systemPurple
+    view.backgroundColor = .blue
 
     addChild(pageViewController)
     view.addSubview(pageViewController.view)
