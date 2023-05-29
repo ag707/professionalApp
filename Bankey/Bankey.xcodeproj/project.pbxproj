@@ -31,6 +31,8 @@
 		7C2C44A72A2290F400DA89A8 /* ShakeyBellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2C44A62A2290F400DA89A8 /* ShakeyBellView.swift */; };
 		7C2C44A92A2418FA00DA89A8 /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2C44A82A2418FA00DA89A8 /* Date+Utils.swift */; };
 		7C2C44AB2A241A5100DA89A8 /* AccountSummaryViewController+Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2C44AA2A241A5100DA89A8 /* AccountSummaryViewController+Networking.swift */; };
+		7C2C44AF2A2546CB00DA89A8 /* ProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2C44AE2A2546CB00DA89A8 /* ProfileTests.swift */; };
+		7C2C44B12A25487000DA89A8 /* AccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2C44B02A25487000DA89A8 /* AccountTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		7C2C44A62A2290F400DA89A8 /* ShakeyBellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakeyBellView.swift; sourceTree = "<group>"; };
 		7C2C44A82A2418FA00DA89A8 /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
 		7C2C44AA2A241A5100DA89A8 /* AccountSummaryViewController+Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSummaryViewController+Networking.swift"; sourceTree = "<group>"; };
+		7C2C44AE2A2546CB00DA89A8 /* ProfileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTests.swift; sourceTree = "<group>"; };
+		7C2C44B02A25487000DA89A8 /* AccountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,7 +203,8 @@
 		7C2C443E2A1E80B800DA89A8 /* BankeyUnitTests */ = {
 			isa = PBXGroup;
 			children = (
-				7C2C44462A1E81C100DA89A8 /* CurrencyFormatterTests.swift */,
+				7C2C44AD2A25460800DA89A8 /* AccountSummary */,
+				7C2C44AC2A2545E600DA89A8 /* Utils */,
 			);
 			path = BankeyUnitTests;
 			sourceTree = "<group>";
@@ -210,6 +215,23 @@
 				7C2C44A62A2290F400DA89A8 /* ShakeyBellView.swift */,
 			);
 			name = Components;
+			sourceTree = "<group>";
+		};
+		7C2C44AC2A2545E600DA89A8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7C2C44462A1E81C100DA89A8 /* CurrencyFormatterTests.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		7C2C44AD2A25460800DA89A8 /* AccountSummary */ = {
+			isa = PBXGroup;
+			children = (
+				7C2C44AE2A2546CB00DA89A8 /* ProfileTests.swift */,
+				7C2C44B02A25487000DA89A8 /* AccountTests.swift */,
+			);
+			path = AccountSummary;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,6 +364,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C2C44472A1E81C100DA89A8 /* CurrencyFormatterTests.swift in Sources */,
+				7C2C44B12A25487000DA89A8 /* AccountTests.swift in Sources */,
+				7C2C44AF2A2546CB00DA89A8 /* ProfileTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
