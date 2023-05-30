@@ -33,6 +33,8 @@
 		7C2C44AB2A241A5100DA89A8 /* AccountSummaryViewController+Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2C44AA2A241A5100DA89A8 /* AccountSummaryViewController+Networking.swift */; };
 		7C2C44AF2A2546CB00DA89A8 /* ProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2C44AE2A2546CB00DA89A8 /* ProfileTests.swift */; };
 		7C2C44B12A25487000DA89A8 /* AccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2C44B02A25487000DA89A8 /* AccountTests.swift */; };
+		7C2C44B32A26557700DA89A8 /* SkeletonLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2C44B22A26557700DA89A8 /* SkeletonLoadable.swift */; };
+		7C2C44B52A26562200DA89A8 /* SkeletonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2C44B42A26562200DA89A8 /* SkeletonCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		7C2C44AA2A241A5100DA89A8 /* AccountSummaryViewController+Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSummaryViewController+Networking.swift"; sourceTree = "<group>"; };
 		7C2C44AE2A2546CB00DA89A8 /* ProfileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTests.swift; sourceTree = "<group>"; };
 		7C2C44B02A25487000DA89A8 /* AccountTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTests.swift; sourceTree = "<group>"; };
+		7C2C44B22A26557700DA89A8 /* SkeletonLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonLoadable.swift; sourceTree = "<group>"; };
+		7C2C44B42A26562200DA89A8 /* SkeletonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,7 +182,7 @@
 				7C0FBFD62A1614AE00EC86B3 /* AccountSummaryViewController.swift */,
 				7C2C44AA2A241A5100DA89A8 /* AccountSummaryViewController+Networking.swift */,
 				7C2C44312A1D14EC00DA89A8 /* Header */,
-				7C2C44322A1D159000DA89A8 /* Cell */,
+				7C2C44322A1D159000DA89A8 /* Cells */,
 			);
 			name = AccountSummary;
 			sourceTree = "<group>";
@@ -192,12 +196,14 @@
 			name = Header;
 			sourceTree = "<group>";
 		};
-		7C2C44322A1D159000DA89A8 /* Cell */ = {
+		7C2C44322A1D159000DA89A8 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				7C2C44332A1D178800DA89A8 /* AccountSummaryCell.swift */,
+				7C2C44B22A26557700DA89A8 /* SkeletonLoadable.swift */,
+				7C2C44B42A26562200DA89A8 /* SkeletonCell.swift */,
 			);
-			name = Cell;
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		7C2C443E2A1E80B800DA89A8 /* BankeyUnitTests */ = {
@@ -350,7 +356,9 @@
 				7C0FBFC62A0C385100EC86B3 /* LoginView.swift in Sources */,
 				7C0FBFC92A0D9FF200EC86B3 /* OnboardingContainerViewController.swift in Sources */,
 				7C2C444B2A1FA5A600DA89A8 /* UITextField+SecureToggle.swift in Sources */,
+				7C2C44B32A26557700DA89A8 /* SkeletonLoadable.swift in Sources */,
 				7C0FBFB02A0C350B00EC86B3 /* SceneDelegate.swift in Sources */,
+				7C2C44B52A26562200DA89A8 /* SkeletonCell.swift in Sources */,
 				7C2C44492A1EC9D200DA89A8 /* NSNotificationName.swift in Sources */,
 				7C0FBFD72A1614AE00EC86B3 /* AccountSummaryViewController.swift in Sources */,
 				7C0FBFD02A13BD7900EC86B3 /* LocalState.swift in Sources */,
